@@ -23,6 +23,7 @@ def apply_hardening():
         "iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT",
         
         # 4. Permitir puertos necesarios (22 SSH, 80 HTTP, 443 HTTPS)
+        "iptables -A INPUT -p tcp --dport 22 -j ACCEPT",
         "iptables -A INPUT -p tcp --dport 80 -j ACCEPT",
         "iptables -A INPUT -p tcp --dport 443 -j ACCEPT",
         
